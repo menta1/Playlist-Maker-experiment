@@ -33,7 +33,7 @@
         </Button>
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchDarkTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
@@ -48,19 +48,25 @@
         />
 
     <Button
-        android:id="@+id/shareApp"
+        android:id="@+id/shareAppButton"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
         android:text="@string/share"
         app:icon="@drawable/share"
         style="@style/buttonSettingsMenu"/>
 
     <Button
-        android:id="@+id/writeSupport"
+        android:id="@+id/writeSupportButton"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
         android:text="@string/help"
         app:icon="@drawable/support"
         style="@style/buttonSettingsMenu"/>
 
     <Button
-        android:id="@+id/termsUse"
+        android:id="@+id/termsUseButton"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
         android:text="@string/terms"
         app:icon="@drawable/arrow_forward"
         style="@style/buttonSettingsMenu"/>

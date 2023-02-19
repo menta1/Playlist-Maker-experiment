@@ -1,32 +1,30 @@
-package com.example.playlistmaker
+package com.example.playlist_maker_experiment
 
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import com.example.playlist_maker_experiment.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
+    lateinit var settingsBinding: ActivitySettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+        settingsBinding = ActivitySettingsBinding.inflate(layoutInflater)
+        setContentView(settingsBinding.root)
 
-        val backButton = findViewById<Button>(R.id.backButtonSettingsActivity)
-        val shareAppButton = findViewById<Button>(R.id.shareApp)
-        val writeSupportButton = findViewById<Button>(R.id.writeSupport)
-        val termsUseButton = findViewById<Button>(R.id.termsUse)
-        backButton.setOnClickListener {
+        settingsBinding.backButtonSettingsActivity.setOnClickListener {
             finish()
         }
 
-        shareAppButton.setOnClickListener {
+        settingsBinding.shareAppButton.setOnClickListener {
             Intent(Intent.ACTION_SEND).apply {
                 putExtra(Intent.EXTRA_TEXT, getString(R.string.share_app_link))
                 type = "plain/text"
                 startActivity(this)
             }
         }
-        writeSupportButton.setOnClickListener {
+        settingsBinding.writeSupportButton.setOnClickListener {
             Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:")
                 putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.extra_text_write_email)))
@@ -35,7 +33,7 @@ class SettingsActivity : AppCompatActivity() {
                 startActivity(this)
             }
         }
-        termsUseButton.setOnClickListener {
+        settingsBinding.termsUseButton.setOnClickListener {
             val termsUseButtonIntent = Intent(
                 Intent.ACTION_VIEW, Uri.parse(
                     getString(R.string.terms_use_link)

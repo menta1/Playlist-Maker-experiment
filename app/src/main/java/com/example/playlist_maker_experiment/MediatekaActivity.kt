@@ -1,7 +1,8 @@
-package com.example.playlistmaker
+package com.example.playlist_maker_experiment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.playlist_maker_experiment.R
 
 class MediatekaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
